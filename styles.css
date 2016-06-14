@@ -59,7 +59,7 @@ h1{
 }
 
 body {
-	background: url("images/background1.jpg") no-repeat;
+	background: url("/Users/Colin/moveTo/images/background1.jpg") no-repeat;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
