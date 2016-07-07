@@ -4,9 +4,53 @@
 
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" href="http://automatedresystems.com/fancybox/hvstyle.css" type="text/css" media="all">
+<script type="text/javascript" src="http://automatedresystems.com/fancybox/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="http://automatedresystems.com/fancybox/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" href="http://automatedresystems.com/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript">
+window.addEventListener('message', function (event) {
+        if (event.data == 'close') {                
+            $.fancybox.close();
+        }
+    }, false);
+$(document).ready(function() {
+	$('form').submit(function(event) {
+	var  address = $('#geocomplete').val();
+    $.fancybox.open({
+	width : 1200,
+	height : 768,
+    'type': 'iframe',
+    'autoSize' : false,
+	'showCloseButton' : true,
+    href:'http://automatedresystems.com/hvnewnext.php?agent=KyleKelly&address='+address,
+    type: 'iframe'
+});
+	event.preventDefault();
+});
+});
+</script>
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+<script src="http://automatedresystems.com/fancybox/jquery.geocomplete.js"></script>
+<script>
+      $(function(){
+        $("#geocomplete").geocomplete({
+          details: "form",
+          types: ["geocode", "establishment"],
+        });
+      });
+    </script>
+<script>
+jQuery(document).ready(function(){
+jQuery("#start").validationEngine();
 
+$("#start").bind("jqv.field.result", function(event, field, errorFound, prompText){ console.log(errorFound) })
+});
+</script>
+	
 
 </head>
 <body>
@@ -14,7 +58,7 @@
 	<h1 id="logo" class="logo"><img src="images/logo_alt.png"></h1>
 
 
-	<div id='adBanner'>Ad Banner</div>
+	<!--<div id='adBanner'>Ad Banner</div>-->
 
 	<div class="content">
 		<div id='profile'>
@@ -34,83 +78,56 @@ REALTOR®</li>
 		<div class="middle">
 
 			<h2 id="homeSearch"><button><a href="https://www.coldwellbankerrealestate.com/Coldwell-Banker-M%26D-Good-Life-450c/Kyle-Kelly-188280a" target="_blank">Free Home Search</a></button></h2>
+			<h3>Want to see what your house is worth?</h3>
+			<div style="height:200px; width:495px;" align="center">
+  <form id="comps" action="" method="post">
+    <div class="prop" style="background-color:#FFF;border: 1px solid #000;position: relative;
+	width: 495px;
+	border-radius: 2px;
+	margin-right: auto;
+	margin-left: auto;
+	height: 135px;
+	margin-bottom: 20px;">
+      <div class="loc" style="padding:5px;">
+        <input id="geocomplete" type="text" name="property" style="width: 98% ! important; color: rgb(187, 187, 187); margin-left:0.2%; margin-top:5px;
+font-size: 17px;
+box-shadow: none !important;
+height: 35px;
+border: 1px solid #999;" placeholder="Enter Property Address e.g. 123 Street Address, City, State Zip Code" required />
+        <div style="text-align:center; margin-top:4px;">
+          <input id="submit_locationform" type="submit" value="GO!" name="submit_locationform"  style="font-weight:bold;width: 200px;
+border-radius: 3px;
+cursor: pointer;
+color: #FFF;
+text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.3);
+border: medium none;
+background: transparent linear-gradient(to bottom, #C50C20 0%, #8F0222 63%, #8F0222 63%, #8E091D 100%) repeat scroll 0% 0%;
+height: 45px;
+padding: 5px 5px;
+margin-left: 5px;"/>
+        </div>
+      </div>
+      <br />
+    </div>
+    <div style="clear: both;"></div>
+  </form>
+</div>
+</div>
+			
+			<div class="listings">
 
-		</div>
-
-		<div class="listings">
-
-		<h2>Featured Patchogue Listings</h2>
+				<h2>Featured Patchogue Listings</h2>
 		<br>
-			<article>
-			<img class="house" src="images/house.jpg"><br>
-			<ul> 
-			
-				<li>123 Address st.</li>
-				<li>Patchogue NY, 11710</li>
-				<li>$600,000</li>
-			</ul>
+					<a href="listings.html"><img class="house" src="images/house.jpg"></a>
 
-			</article>
+				<h2>Patchogue Rentals</h2>
 
-			<article>
-			<img class="house" src="images/house.jpg"><br>
-			<ul> 
-			
-				<li>123 Address st.</li>
-				<li>Patchogue NY, 11710</li>
-				<li>$600,000</li>
-			</ul>
+					<a href="rentals.html"><img class="house" src="images/house.jpg"></a>
+						<br>
+				<center><h3><button><a href="partners.html" target="_blank">Trusted Partners</a></button></h3></center>
 
-			</article>
-
-			<article>
-			<img class="house" src="images/house.jpg"><br>
-			<ul> 
-			
-				<li>123 Address st.</li>
-				<li>Patchogue NY, 11710</li>
-				<li>$600,000</li>
-			</ul>
-
-			</article>
-
-			<article>
-			<img class="house" src="images/house.jpg"><br>
-			<ul> 
-			
-				<li>123 Address st.</li>
-				<li>Patchogue NY, 11710</li>
-				<li>$600,000</li>
-			</ul>
-
-			</article>
-
-			<article>
-			<img class="house" src="images/house.jpg"><br>
-			<ul> 
-			
-				<li>123 Address st.</li>
-				<li>Patchogue NY, 11710</li>
-				<li>$600,000</li>
-			</ul>
-
-			</article>
-
-			<article>
-			<img class="house" src="images/house.jpg"><br>
-			<ul> 
-			
-				<li>123 Address st.</li>
-				<li>Patchogue NY, 11710</li>
-				<li>$600,000</li>
-			</ul>
-
-			</article>
-
-
-
+			</div>
 		</div>
-	</div>
 
 	<footer>Site operated by: 
 Kyle Kelly, Licensed Salesperson 

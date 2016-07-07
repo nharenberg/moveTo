@@ -83,7 +83,7 @@ div {
 }
 
 body {
-	background: url("./images/background1.JPG") no-repeat;
+	background: url("./images/background1-min.JPG") no-repeat;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -169,4 +169,50 @@ footer{
 
 #homeSearch button:active {
 	background-color: #0059b3;
+}
+
+@media only screen and (max-width: 768px){
+	.content > div{
+		width: 100%;
+	}
+	img{
+		width: 90%;
+	}
+	.listings > article{
+		width: 100%;
+	}
+}
+
+h3{
+	color: white;
+	text-align: center;
+}
+
+#partners button{
+	background: #0080ff;
+}
+
+/*#left{
+	position: absolute;
+	left: 0;
+}*/
+
+#jane {
+	height: 300px;
+	width: 300px;
+	margin-left: 50px;
+	margin-top: 50px;
+
+}
+
+#apro {
+	height: 300px;
+	width: 300px;
+	margin-top: 50px;
+	padding-left: 20px;
+}
+
+#resi {
+	width: 300px;
+	padding-left: 20px;
 }
